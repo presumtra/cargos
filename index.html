@@ -283,12 +283,12 @@
       </div>
 
       <div class="overflow-x-auto">
-        <table class="w-full text-left text-xs border-collapse" padding-top:2px padding-bottom:2px>
+        <table class="w-full text-left text-xs border-collapse">
           <thead>
             <tr class="bg-slate-100/90 text-slate-700 font-bold uppercase tracking-wider text-[11px] border-b border-slate-200 table-sticky-header">
-              <th class="py-1.5 px-4">Inciso / Partida / Concepto</th>
+              <th class="py-1.5 px-4">Reg. Estatutario / Partida / Agrupamiento</th>
               <th class="py-1.5 px-4 text-right">Cargos Iniciales</th>
-              <th class="py-1.5 px-4 text-right">Modificaciónes de Cargos</th>
+              <th class="py-1.5 px-4 text-right">Modif. de Cargos</th>
               <th class="py-1.5 px-4 text-right">Cargos Definitivos</th>
               <th class="py-1.5 px-4 text-right">Cargos Restringidos</th>
               <th class="py-1.5 px-4 text-right">Saldo de Cargos</th>
@@ -780,11 +780,11 @@
         tr.className = 'hover:bg-slate-50 transition-colors';
         tr.innerHTML = `
           <td class="py-1.5 px-4 ${padding[r.level]} ${levelClasses[r.level]} text-xs">${r.label}</td>
-          <td class="py-1.5 px-4 text-right ${r.level === 0 ? 'font-bold text-slate-950' : 'text-slate-700'} text-xs">${fmtNumber(r.ci)}</td>
-          <td class="py-1.5 px-4 text-right ${r.level === 0 ? 'font-bold text-slate-800' : 'text-slate-700'} text-xs">${fmtNumber(r.mc)}</td>
-          <td class="py-1.5 px-4 text-right ${r.level === 0 ? 'font-bold text-emerald-800' : 'text-emerald-700'} text-xs">${fmtNumber(r.cd)}</td>
-          <td class="py-1.5 px-4 text-right ${r.level === 0 ? 'font-bold text-amber-700' : 'text-amber-600'} text-xs">${fmtNumber(r.cr)}</td>
-          <td class="py-1.5 px-4 text-right ${r.level === 0 ? 'font-bold text-cyan-800' : 'text-cyan-700'} text-xs">${fmtNumber(r.sc)}</td>
+          <td class="py-1.5 px-4 text-center ${r.level === 0 ? 'font-bold text-slate-950' : 'text-slate-700'} text-xs">${fmtNumber(r.ci)}</td>
+          <td class="py-1.5 px-4 text-center ${r.level === 0 ? 'font-bold text-slate-800' : 'text-slate-700'} text-xs">${fmtNumber(r.mc)}</td>
+          <td class="py-1.5 px-4 text-center ${r.level === 0 ? 'font-bold text-emerald-800' : 'text-emerald-700'} text-xs">${fmtNumber(r.cd)}</td>
+          <td class="py-1.5 px-4 text-center ${r.level === 0 ? 'font-bold text-amber-700' : 'text-amber-600'} text-xs">${fmtNumber(r.cr)}</td>
+          <td class="py-1.5 px-4 text-center ${r.level === 0 ? 'font-bold text-cyan-800' : 'text-cyan-700'} text-xs">${fmtNumber(r.sc)}</td>
         `;
         tbody.appendChild(tr);
       });
