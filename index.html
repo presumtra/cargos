@@ -330,13 +330,10 @@
               <th class="py-2.5 px-2">Prg</th>
               <th class="py-2.5 px-2">Act</th>
               <th class="py-2.5 px-2">UE</th>
-              <th class="py-2.5 px-2">Inc.PP</th>
-              <th class="py-2.5 px-3 text-center">Descripción</th>
-              <th class="py-2.5 px-2 text-center">R.Est</th>
-              <th class="py-2.5 px-3">Desc. RE</th>
-              <th class="py-2.5 px-2 text-right">Agrup. O</th>
-              <th class="py-2.5 px-3 text-right">Desc. AO</th>
-              <th class="py-2.5 px-2">Cargos I.</th>
+              <th class="py-2.5 px-3">Inciso / Partida Principal</th>
+              <th class="py-2.5 px-3">Régimen Estatutario</th>
+              <th class="py-2.5 px-3">Agrupamiento Ocupacional</th>
+              <th class="py-2.5 px-2">Cargos Iniciales.</th>
               <th class="py-2.5 px-2">Mod. Cargos</th>
               <th class="py-2.5 px-2">Cargos Def.</th>
               <th class="py-2.5 px-2">Cargos Rest.</th>
@@ -896,7 +893,7 @@
       const pageItems = searchFilteredRecords.slice(startIdx, startIdx + PAGE_SIZE);
 
       if (pageItems.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="14" class="text-center py-6 text-slate-400 font-sans">No se encontraron imputaciones para los filtros seleccionados</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="11" class="text-center py-6 text-slate-400 font-sans">No se encontraron imputaciones para los filtros seleccionados</td></tr>`;
       } else {
         pageItems.forEach(r => {
           const ejec = r.vig - r.disp;
@@ -907,17 +904,14 @@
             <td class="py-2 px-2 font-sans text-slate-700">${r.p}</td>
             <td class="py-2 px-2 font-sans text-slate-700">${r.a}</td>
             <td class="py-2 px-2 font-sans text-slate-700">${r.ue}</td>
-            <td class="py-2 px-2 font-mono font-semibold text-slate-900">${r.inc}.${r.pp}</td>
-            <td class="py-2 px-3 font-sans text-slate-800 max-w-xs truncate" title="${r.desp}">${r.desp || '-'}</td>
-            <td class="py-2 px-2 text-center text-slate-500 font-sans">${r.ree}</td>
-            <td class="py-2 px-3 font-sans text-slate-800 max-w-xs truncate" title="${r.desr}">${r.desr || '-'}</td>
-            <td class="py-2 px-2 text-center text-slate-500 font-sans">${r.ao}</td>
-            <td class="py-2 px-3 font-sans text-slate-800 max-w-xs truncate" title="${r.desao}">${r.desao || '-'}</td>
-            <td class="py-2 px-2 font-sans text-slate-700">${r.ci}</td>
-            <td class="py-2 px-2 font-sans text-slate-700">${r.mc}</td>
-            <td class="py-2 px-2 font-sans text-slate-700">${r.cd}</td>
-            <td class="py-2 px-2 font-sans text-slate-700">${r.cr}</td>
-            <td class="py-2 px-2 font-sans text-slate-700">${r.sc}</td>
+            <td class="py-2 px-3 font-mono font-semibold text-slate-900">${r.inc}.${r.pp} - ${r.desp || '-'}</td>
+            <td class="py-2 px-3 text-left text-slate-500 font-sans">${r.ree} - ${r.desr || '-'}</td>
+            <td class="py-2 px-3 text-left text-slate-500 font-sans">${r.ao} - ${r.desao || '-'}</td>
+            <td class="py-2 px-2 text-center font-sans text-slate-700">${r.ci}</td>
+            <td class="py-2 px-2 text-center font-sans text-slate-700">${r.mc}</td>
+            <td class="py-2 px-2 text-center font-sans text-slate-700">${r.cd}</td>
+            <td class="py-2 px-2 text-center font-sans text-slate-700">${r.cr}</td>
+            <td class="py-2 px-2 text-center font-sans text-slate-700">${r.sc}</td>
           `;
           tbody.appendChild(tr);
         });
