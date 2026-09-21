@@ -248,7 +248,7 @@
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center gap-2">
             <i data-lucide="bar-chart-3" class="w-4 h-4 text-sky-600"></i>
-            <h3 class="text-sm font-bold text-slate-800">Distribución de los cargos por Agrupamiento Ocupacional</h3>
+            <h3 class="text-sm font-bold text-slate-800">Cargos Iniciales VS Definitivos ditribuidos por Agrupamiento Ocupacional</h3>
           </div>
           <span class="text-xs text-slate-400">Valores</span>
         </div>
@@ -827,9 +827,14 @@
         data: {
           labels: data.map(d => d.label),
           datasets: [{
-            label: 'Saldo de cargos',
-            data: data.map(d => d.sc),
-            backgroundColor: 'rgba(14, 165, 233, 0.85)',
+            label: 'Cargos Iniciales',
+            data: data.map(d => d.ci),
+            backgroundColor: 'rgba(23, 142, 159, 0.85)',
+            borderRadius: 6
+          },{
+            label: 'Cargos Definitivos',
+            data: data.map(d => d.cd),
+            backgroundColor: 'rgba(117, 22, 85, 0.85)',
             borderRadius: 6
           }]
         },
@@ -837,7 +842,7 @@
           responsive: true, maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
-            tooltip: { callbacks: { label: ctx => ` Saldo de cargos: ${Number(ctx.raw).toLocaleString('es-AR')}` } }
+            tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('es-AR')}` } }
           },
           scales: { y: { beginAtZero: true, ticks: { callback: val => Number(val).toLocaleString('es-AR') } } }
         }
@@ -850,8 +855,8 @@
         data: {
           labels: data.map(d => d.label),
           datasets: [{
-            data: data.map(d => d.sc),
-            backgroundColor: ['#0ea5e9','#14b8a6','#8b5cf6','#f59e0b','#ef4444','#64748b','#ec4899'],
+            data: data.map(d => d.cd),
+            backgroundColor: ['#0ea5e9','#f1f748','#23aabd','#10b981','#058203','#e61c72','#ec4899','#751655'],
             borderWidth: 2, borderColor: '#ffffff'
           }]
         },
